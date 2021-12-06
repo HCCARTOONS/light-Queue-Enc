@@ -1,8 +1,11 @@
-FROM python:3.9.2-slim-buster
+FROM jrottenberg/ffmpeg:4.2.5-ubuntu2004
+ENV PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 RUN mkdir /bot && chmod 777 /bot
 WORKDIR /bot
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt -qq update && apt -qq install -y git wget pv jq python3-dev ffmpeg mediainfo
+RUN apt -qq install -y software-properties-common
+RUN add-apt-repository ppa:deadsnakes/ppa 
+RUN apt -qq update && apt -qq install -y python3.9 python3-pip git wget pv jq  mediainfo
 COPY . .
 RUN pip3 install -r requirements.txt
-CMD ["bash","run.sh"]
+ENTRYPOINT ["bash","run.sh"]
