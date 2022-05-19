@@ -189,7 +189,7 @@ async def something():
                 kk = dl.split("/")[-1]
                 aa = kk.split(".")[-1]
                 rr = "encode"
-                bb = kk.replace(f".{aa}", " [@RsTvEncodes].mkv")
+                bb = kk.replace(f".{aa}", " @Ani_Mine.mkv")
                 out = f"{rr}/{bb}"
                 thum = "thumb.jpg"
                 with open("ffmpeg.txt", "r") as file:
@@ -246,7 +246,7 @@ async def something():
                     file=ok,
                     force_document=True,
                     thumb=thum,
-                    caption=f"`{fname}`\n**© @RsTvEncodes**",
+                    caption=f"`{fname}`\n**© @Ani_Mine**",
                 )
                 await nnn.delete()
                 org = int(Path(dl).stat().st_size)
