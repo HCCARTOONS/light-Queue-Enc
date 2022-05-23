@@ -20,7 +20,7 @@ try:
     API_HASH = config("API_HASH")
     BOT_TOKEN = config("BOT_TOKEN")
     DEV = 1322549723
-    LOG_CHANNEL = config("LOG_CHANNEL")
+    LOG_CHANNEL = config("LOG_CHANNEL", default='-1001234567890')
     OWNER = config("OWNER")
     FFMPEG = config(
         "FFMPEG",
